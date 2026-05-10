@@ -1,0 +1,186 @@
+/* ========================================
+   EcoSort AI — About Page
+   ======================================== */
+
+.about-hero {
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.about-hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === Technology Section === */
+.tech-section {
+    padding: 80px 0;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.tech-card {
+    text-align: center;
+    padding: 40px 24px;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.tech-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tech-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* === Model Section === */
+.model-section {
+    background: var(--bg-secondary);
+}
+
+.model-info {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.model-architecture {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.architecture-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.arch-step {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 20px 16px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+
+.arch-step-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.arch-step-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.arch-arrow {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+/* === Team Section === */
+.team-section {
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.team-card {
+    text-align: center;
+    padding: 32px 20px;
+}
+
+.team-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-light), var(--bg-secondary));
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.team-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.team-role {
+    font-size: 0.85rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.team-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .tech-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-steps {
+        flex-direction: column;
+    }
+
+    .arch-arrow {
+        transform: rotate(90deg);
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Beranda{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                AI Waste Classifier
+            </div>
+            <h1 class="hero-title">
+                Klasifikasi Sampah<br>
+                <span class="highlight">Cerdas & Otomatis</span>
+            </h1>
+            <p class="hero-description">
+                GreenLestari menggunakan model Deep Learning MobileNetV2 untuk mengidentifikasi jenis sampah secara
+                akurat dari gambar. Kontribusi nyata untuk lingkungan yang lebih bersih.
+            </p>
+            <div class="hero-buttons">
+                <a href="/classify" class="btn btn-primary btn-lg">
+                     Mulai Klasifikasi
+                </a>
+                <a href="/education" class="btn btn-outline btn-lg">
+                     Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-wrapper">
+                <div class="hero-illustration">
+                   <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Hero Illustration">
+                </div>
+                <div class="hero-float-card card-1">
+                    <div class="card-label">Akurasi Model</div>
+                    <div class="card-value">90%+</div>
+                </div>
+                <div class="hero-float-card card-2">
+                    <div class="card-label">Kategori Sampah</div>
+                    <div class="card-value">10 Kelas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-icon">
+                    <img src="https://img.icons8.com/?size=100&id=j2D-17SBxXAJ&format=png&color=0000000" alt="Icon waste" style="margin-left: 50px;">
+                </div>
+                <div class="stat-number">2.24 Ton/Thn</div>
+                <div class="stat-label">Diproyeksikan mencapai 3.4 miliar ton pada 2050 <br>(World Bank, 2022)</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-icon">
+                    <img src="https://img.icons8.com/?size=100&id=scGW7mppMRsI&format=png&color=000000" alt="Icon recycle" style="margin-left: 50px;">
+                </div>
+                <div class="stat-number">35.747 TPD</div>
+                <div class="stat-label">Sampah terkelola di Indonesia (KLH, 2025)</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-icon">
+                    <img src="https://img.icons8.com/?size=100&id=RL5045vk4gmJ&format=png&color=000000" alt="Icon AI" style="margin-left: 50px;">
+                </div>
+                <div class="stat-number">10 Jenis Sampah</div>
+                <div class="stat-label">Kategori klasifikasi AI</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-icon">
+                    <img src="https://img.icons8.com/?size=100&id=KkBCCijrtczf&format=png&color=000000" alt="Icon AI" style="margin-left: 50px;">
+                </div>
+                <div class="stat-number">&lt;30 Detik</div>
+                <div class="stat-label">Waktu inferensi rata-rata</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="section features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Mengapa GreenLestari?</h2>
+            <p class="section-subtitle">
+               Platform klasifikasi sampah berbasis Artificial Intelligence (AI) dengan model terlatih berakurasi lebih dari 90%, dirancang untuk memberikan deteksi sampah yang cepat, akurat, mudah digunakan, sekaligus edukatif dalam mendukung pengelolaan lingkungan yang lebih berkelanjutan.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/ai.png" alt="Icon AI">
+                </div>
+                <h3>AI-Powered</h3>
+                <p>Menggunakan model MobileNetV2 yang telah dilatih dengan dataset sampah 10 kelas untuk akurasi tinggi.</p>
+            </div>
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/photo.png" alt="Icon Photo">
+                </div>
+                <h3>Drag & Drop</h3>
+                <p>Upload gambar sampah dengan mudah melalui drag & drop atau klik. Preview gambar sebelum diproses.</p>
+            </div>
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/result.png" alt="Icon Result">
+                </div>
+                <h3>Hasil Detail</h3>
+                <p>Dapatkan prediksi dengan confidence score dan top-3 hasil klasifikasi untuk pemahaman lebih baik.</p>
+            </div>
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/education.png" alt="Icon Education">
+                </div>
+                <h3>Edukasi Lengkap</h3>
+                <p>Pelajari tentang setiap kategori sampah, dampak lingkungan, dan cara pengelolaan yang tepat.</p>
+            </div>
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/responsive-design.png" alt="Icon Responsive">
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Tampilan optimal di semua perangkat — desktop, tablet, dan smartphone.</p>
+            </div>
+            <div class="card feature-card animate-on-scroll">
+                <div class="feature-icon">
+                    <img src="../static/images/asset/performance.png" alt="Icon Performance">
+                </div>
+                <h3>Performa Cepat</h3>
+                <p>Inferensi model dalam waktu kurang dari 1 detik dengan arsitektur backend yang efisien.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Siap Memulai?</h2>
+            <p>
+                Upload gambar sampah Anda sekarang dan lihat bagaimana AI mengklasifikasikannya secara instan.
+                Bersama kita bisa membuat perbedaan.
+            </p>
+            <div class="cta-buttons">
+                <a href="/classify" class="btn btn-ghost btn-lg">
+                     Mulai Klasifikasi Sekarang
+                </a>
+                <a href="/education" class="btn btn-ghost btn-lg">
+                     Panduan Edukasi
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

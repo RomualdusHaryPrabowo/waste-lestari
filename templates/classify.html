@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Klasifikasi Sampah{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/classify.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="classify-hero">
+    <div class="container">
+        <h1>Klasifikasi Sampah</h1>
+        <p>Unggah gambar sampah dan dapatkan klasifikasi secara otomatis</p>
+    </div>
+</section>
+
+<!-- Classification Area -->
+<section class="classify-section">
+    <div class="container">
+        <div class="classify-grid">
+            <!-- Upload Card -->
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <img src="https://img.icons8.com/?size=100&id=VzGqlRUOUyGO&format=png&color=000000" alt="Upload Icon" style="margin-left: 150px;">
+                    </div>
+                    <h3>Seret & Lepas Gambar</h3>
+                    <p>atau klik untuk memilih file</p>
+                    <span class="upload-formats">PNG, JPG, JPEG • Maks 10MB</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button class="remove-btn" id="removeBtn">✕</button>
+                </div>
+
+                <button class="btn btn-primary predict-btn" id="predictBtn">
+                    Mulai Klasifikasi
+                </button>
+
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Memproses hasil klasifikasi...</p>
+                </div>
+            </div>
+
+            <!-- Result Card -->
+            <div class="result-card" id="resultCard">
+                <div class="result-header">
+                    <h2>Hasil Klasifikasi</h2>
+                </div>
+
+                <div class="result-prediction" id="resultPrediction">
+                    <div class="result-emoji">🔋</div>
+                    <div class="result-label">Baterai</div>
+                    <div class="result-confidence">Confidence: 92.5%</div>
+                    <div class="confidence-bar-wrapper">
+                        <div class="confidence-bar"></div>
+                    </div>
+                </div>
+
+                <div class="top-predictions" id="top3Predictions">
+                    <h4>Top 3 Prediksi</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/classify.js') }}"></script>
+{% endblock %}

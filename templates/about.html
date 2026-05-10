@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Tentang{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="about-hero">
+    <div class="container">
+        <h1>🌿 Tentang EcoSort AI</h1>
+        <p>Mengenal lebih dekat teknologi, model AI, dan tim di balik platform ini.</p>
+    </div>
+</section>
+
+<!-- Technology -->
+<section class="section tech-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">⚙️ Teknologi</div>
+            <h2 class="section-title">Tech Stack</h2>
+            <p class="section-subtitle">Teknologi modern yang digunakan untuk membangun EcoSort AI.</p>
+        </div>
+        <div class="tech-grid">
+            <div class="card tech-card animate-on-scroll">
+                <div class="tech-icon">🐍</div>
+                <h3>Python Flask</h3>
+                <p>Backend web framework yang ringan dan efisien untuk menangani request dan inferensi model AI.</p>
+            </div>
+            <div class="card tech-card animate-on-scroll">
+                <div class="tech-icon">🧠</div>
+                <h3>TensorFlow / Keras</h3>
+                <p>Framework Deep Learning untuk membangun dan melatih model klasifikasi gambar dengan MobileNetV2.</p>
+            </div>
+            <div class="card tech-card animate-on-scroll">
+                <div class="tech-icon">🌐</div>
+                <h3>HTML / CSS / JS</h3>
+                <p>Frontend modern dan responsif dengan desain eco-friendly dan animasi ringan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Model Architecture -->
+<section class="section model-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">🧪 Model AI</div>
+            <h2 class="section-title">Arsitektur Model</h2>
+            <p class="section-subtitle">MobileNetV2 — model CNN yang efisien untuk klasifikasi gambar.</p>
+        </div>
+        <div class="model-info">
+            <div class="model-architecture">
+                <h3 style="margin-bottom: 8px;">Pipeline Klasifikasi</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">
+                    Alur kerja model dari input gambar hingga prediksi akhir.
+                </p>
+                <div class="architecture-steps">
+                    <div class="arch-step">
+                        <div class="arch-step-icon">📸</div>
+                        <div class="arch-step-label">Input Gambar</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-step-icon">📐</div>
+                        <div class="arch-step-label">Resize 224×224</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-step-icon">⚡</div>
+                        <div class="arch-step-label">Preprocessing</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-step-icon">🧠</div>
+                        <div class="arch-step-label">MobileNetV2</div>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-step">
+                        <div class="arch-step-icon">🎯</div>
+                        <div class="arch-step-label">Klasifikasi</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                    <div>
+                        <strong>Model:</strong>
+                        <p style="color: var(--text-secondary);">MobileNetV2 (pre-trained + fine-tuned)</p>
+                    </div>
+                    <div>
+                        <strong>Kelas:</strong>
+                        <p style="color: var(--text-secondary);">10 kategori sampah</p>
+                    </div>
+                    <div>
+                        <strong>Input Size:</strong>
+                        <p style="color: var(--text-secondary);">224 × 224 × 3 pixels</p>
+                    </div>
+                    <div>
+                        <strong>Output:</strong>
+                        <p style="color: var(--text-secondary);">Softmax probability distribution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="section team-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">👥 Tim</div>
+            <h2 class="section-title">Developer</h2>
+            <p class="section-subtitle">Tim di balik pengembangan EcoSort AI.</p>
+        </div>
+        <div class="team-grid">
+            <div class="card team-card animate-on-scroll">
+                <div class="team-avatar">👨‍💻</div>
+                <h4>Developer 1</h4>
+                <div class="team-role">AI Engineer</div>
+                <p class="team-desc">Pelatihan model, preprocessing, dan optimasi arsitektur.</p>
+            </div>
+            <div class="card team-card animate-on-scroll">
+                <div class="team-avatar">👩‍💻</div>
+                <h4>Developer 2</h4>
+                <div class="team-role">Backend Developer</div>
+                <p class="team-desc">Flask API, integrasi model, dan deployment.</p>
+            </div>
+            <div class="card team-card animate-on-scroll">
+                <div class="team-avatar">👨‍🎨</div>
+                <h4>Developer 3</h4>
+                <div class="team-role">Frontend Developer</div>
+                <p class="team-desc">UI/UX design, responsive layout, dan animasi.</p>
+            </div>
+            <div class="card team-card animate-on-scroll">
+                <div class="team-avatar">👩‍🔬</div>
+                <h4>Developer 4</h4>
+                <div class="team-role">Data Scientist</div>
+                <p class="team-desc">Data collection, augmentation, dan evaluasi model.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

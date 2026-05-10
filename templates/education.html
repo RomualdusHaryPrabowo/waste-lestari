@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Edukasi Sampah{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/education.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="edu-hero">
+    <div class="container">
+        <h1>📚 Edukasi Sampah</h1>
+        <p>Pelajari tentang berbagai jenis sampah, dampak lingkungan, dan cara pengelolaan yang tepat.</p>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="categories-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">♻️ 10 Kategori</div>
+            <h2 class="section-title">Pilih Kategori Sampah</h2>
+            <p class="section-subtitle">Klik pada kategori untuk mempelajari lebih lanjut.</p>
+        </div>
+        <div class="categories-grid">
+            {% for cat in categories %}
+            <a href="/education/{{ cat.key }}" class="card category-card animate-on-scroll"
+                style="--cat-color: {{ cat.color }};">
+                <div class="category-emoji">{{ cat.icon }}</div>
+                <h3>{{ cat.name }}</h3>
+                <p>{{ cat.description[:80] }}...</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/education.js') }}"></script>
+{% endblock %}

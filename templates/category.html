@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/education.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="category-detail">
+    <div class="container">
+        <a href="/education" class="back-btn">← Kembali ke Edukasi</a>
+
+        <div class="detail-header">
+            <div class="detail-icon" style="background: {{ category.color }}20; color: {{ category.color }};">
+                {{ category.icon }}
+            </div>
+            <div>
+                <h1>{{ category.name }}</h1>
+                <p style="color: var(--text-secondary);">{{ category.description }}</p>
+            </div>
+        </div>
+
+        <div class="detail-content">
+            <!-- Examples -->
+            <div class="detail-section">
+                <h3>📋 Contoh</h3>
+                <ul>
+                    {% for example in category.examples %}
+                    <li>{{ example }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Environmental Impact -->
+            <div class="detail-section">
+                <h3>⚠️ Dampak Lingkungan</h3>
+                <p>{{ category.impact }}</p>
+            </div>
+
+            <!-- Disposal Guide -->
+            <div class="detail-section">
+                <h3>♻️ Cara Pengelolaan</h3>
+                <p>{{ category.disposal }}</p>
+            </div>
+
+            <!-- Quick Action -->
+            <div class="detail-section" style="background: {{ category.color }}10; border-color: {{ category.color }}30;">
+                <h3>🤖 Coba Klasifikasi</h3>
+                <p>Upload gambar {{ category.name|lower }} dan lihat bagaimana AI mengklasifikasikannya.</p>
+                <a href="/classify" class="btn btn-primary"
+                    style="margin-top: 16px; background: {{ category.color }};">
+                    Mulai Klasifikasi →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
