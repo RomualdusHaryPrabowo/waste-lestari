@@ -450,13 +450,28 @@ button {
     margin-bottom: 12px;
 }
 
-.footer-links ul li a {
+.waste-columns {
+    display: flex;
+    gap: 40px;
+}
+
+.waste-columns ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul a {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.95rem;
     transition: var(--transition-fast);
 }
 
-.footer-links ul li a:hover {
+.footer-links ul{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-links ul a:hover {
     color: var(--accent);
     padding-left: 4px;
 }
